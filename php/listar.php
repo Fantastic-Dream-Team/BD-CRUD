@@ -66,10 +66,17 @@ endif; ?>
                         <?php endif; ?>
                     </td>
                     <td class="text-center">
-                        <a href="editar.php?id=<?= $fila['id'] ?>"
-                           class="btn btn-warning btn-sm me-1">
+                        <button type="button" 
+                           class="btn btn-warning btn-sm me-1"
+                           data-bs-toggle="modal" 
+                           data-bs-target="#modalEditar"
+                           data-id="<?= $fila['id'] ?>"
+                           data-nombre="<?= htmlspecialchars($fila['nombre']) ?>"
+                           data-categoria="<?= htmlspecialchars($fila['categoria']) ?>"
+                           data-precio="<?= $fila['precio'] ?>"
+                           data-cantidad="<?= $fila['cantidad'] ?>">
                             ✏️ Editar
-                        </a>
+                        </button>
                         <a href="eliminar.php?id=<?= $fila['id'] ?>"
                            class="btn btn-danger btn-sm"
                            onclick="return confirm('¿Seguro que deseas eliminar este producto?')">
