@@ -18,27 +18,27 @@
 
     <div class="container">
         <div class="row">
-            
+
+            <!-- Columna izquierda: formulario (Integrante 2) -->
             <div class="col-md-4 mb-4">
                 <div class="card shadow-sm">
                     <div class="card-header bg-primary text-white">
                         <h5 class="card-title mb-0">Registrar Producto</h5>
                     </div>
                     <div class="card-body">
-                        <p class="text-muted">El formulario de registro se cargará aquí.</p>
+                        <?php include 'registrar.php'; ?>
                     </div>
                 </div>
             </div>
 
+            <!-- Columna derecha: tabla (Integrante 3) -->
             <div class="col-md-8 mb-4">
                 <div class="card shadow-sm">
                     <div class="card-header bg-dark text-white">
                         <h5 class="card-title mb-0">Lista de Productos en Existencia</h5>
                     </div>
                     <div class="card-body">
-                        
-                        <p class="text-muted">La tabla dinámica de la base de datos se cargará aquí.</p>
-                        
+                        <?php include 'listar.php'; ?>
                     </div>
                 </div>
             </div>
