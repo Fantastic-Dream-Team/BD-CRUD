@@ -1,0 +1,44 @@
+services:
+  - type: web
+    name: inventario-utp
+    env: php
+    plan: free
+    
+    # Rama a deployar
+    branch: main
+    
+    # Comando de build (si es necesario)
+    buildCommand: "mkdir -p logs && chmod 755 logs"
+    
+    # Comando de inicio
+    startCommand: "php -S 0.0.0.0:10000"
+    
+    # Puerto
+    port: 10000
+    
+    # Variables de entorno (configurar en dashboard de Render)
+    envVars:
+      - key: DB_HOST
+        value: "tu_host_supabase.supabase.co"
+      - key: DB_USER
+        value: "postgres"
+      - key: DB_PASSWORD
+        sync: false  # No sincronizar (sensible)
+      - key: DB_NAME
+        value: "postgres"
+      - key: DB_PORT
+        value: "5432"
+      - key: APP_ENV
+        value: "production"
+      - key: APP_DEBUG
+        value: "false"
+      - key: TIMEZONE
+        value: "America/Panama"
+    
+    # Salud check
+    healthCheckPath: "/"
+    
+    # Archivos estáticos
+    staticFilePaths:
+      - path: "/"
+        directory: "/"
