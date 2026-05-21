@@ -2,12 +2,12 @@
 
 $host      = "localhost";
 $usuario   = "root";
-$contrasena = "";
-$port      = 3307;
+$contrasena = "123";
+$port      = 3306;
 $base_datos = "inventario_utp";
 
-// Crear la conexión pasando el puerto correctamente
-$conexion = new mysqli($host, $usuario, $contrasena, $base_datos, $port);
+// Crear la conexión (SIN el puerto en el constructor)
+$conexion = new mysqli($host, $usuario, $contrasena, $base_datos);
 
 // Verificar y manejar errores de conexión
 if ($conexion->connect_error) {
@@ -15,5 +15,6 @@ if ($conexion->connect_error) {
             <strong>Error crítico de conexión:</strong> " . $conexion->connect_error . "
          </div>");
 }
+
 $conexion->set_charset("utf8");
 ?>
